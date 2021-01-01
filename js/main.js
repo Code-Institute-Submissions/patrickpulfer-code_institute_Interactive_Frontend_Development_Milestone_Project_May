@@ -1,4 +1,75 @@
-var today = new Date();
+// Variables
+    var today = new Date();
+    var latestbyCountry = Array();
+    var totalbyCountry = Array();
+
+// Importing Google Charts, then run API calls
+    google.charts.load('current', {
+        'packages':['geochart','corechart'],
+        'mapsApiKey': 'AIzaSyAz5bDiEFM6Ugta6CMOcMj6f3m55A16p3w'
+    }).then(getCovidLatestData);
+
+
+$(document).ready(function(){
+    
+});
+
+function getCovidLatestData(){
+    let endpoint = 'https://covid.ourworldindata.org/data/latest/owid-covid-latest.json';
+
+    $.ajax({
+        url: endpoint,
+        dataType: 'json',
+
+        success: function(result){
+
+            latestbyCountry.push(['Country', 'New Cases', 'New Deaths']);
+            totalbyCountry.push(['Country', 'Total Cases', 'Total Deaths']);
+
+            $.each(result, function(i, val){
+                // Parse Statistics
+                    latestbyCountry.push([(result[i]['location']),(result[i]['new_cases']),(result[i]['new_deaths'])]);
+                    totalbyCountry.push([(result[i]['location']),(result[i]['total_cases']),(result[i]['total_deaths'])]);
+            })
+
+            // Debug Only
+                console.log('API:');
+                console.log(result);
+                console.log('latestbyCountry:');
+                console.log(latestbyCountry);
+                console.log(typeof latestbyCountry);
+
+            // Draw Google GeoChart
+                drawRegionsMap(latestbyCountry, 'covid_latest_map', '#FF7F00');
+                drawRegionsMap(totalbyCountry, 'covid_total_map', '#FF0000');
+
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) { 
+            alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+        }    
+    });
+}
+
+function drawRegionsMap(dataForDrawing, htmlElement, color) {
+    console.log('Data for Drawing?');
+    console.log(dataForDrawing);
+    var data = google.visualization.arrayToDataTable(dataForDrawing);
+    var options = {
+        colors: [(color)],
+        sizeAxis: { minValue: 0, maxValue: 300000}
+    };
+    var chart = new google.visualization.GeoChart(document.getElementById(htmlElement));
+    chart.draw(data, options);
+}
+
+function arrayToTable(){
+
+}
+
+
+
+
+/*
 
 var processedHPSCIreland = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
 var processedHPSCIrelandTH = [];
@@ -57,7 +128,7 @@ function getHPSCIreland(){
             for (let i=0; i < processedHPSCIreland[0].length; i++) {
                 processedHPSCIrelandTH.push(processedHPSCIreland.id);
             }
-            */
+            
 
          //  createTableHPSCIreland();
 
@@ -107,14 +178,6 @@ function lastReportedChart(){
 }
 
 
-
-
-
-
-
-/*
-
-
 function createTableHPSCIreland(){
     
     var TableHPSCIreland = '<table border="1"><tr>';
@@ -153,6 +216,4 @@ $(document).ready(function() {
        //We add vPool HTML content to #myDIV
        $('#myDIV').html(vPool);
 });
-
-
   */

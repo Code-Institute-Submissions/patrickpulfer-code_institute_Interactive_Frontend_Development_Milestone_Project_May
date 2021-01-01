@@ -1,0 +1,22 @@
+body {
+  background-color: #1a2238;
+}
+
+#page_first_half {
+  background-color: #1a2238;
+}
+
+#page_second_half {
+  background-color: white;
+}
+
+.card {
+  background-color: white;
+  color: #1a2238;
+}
+
+#main1 {
+  padding-bottom: 100px;
+}
+
+// #1A2238#9DAAF2#FF6A3D#F4DB7D

@@ -3,6 +3,8 @@
     var latestbyCountry = Array();
     var totalbyCountry = Array();
     var newsAPI = Array();
+    var totalDeaths;
+    var totalCases;
 
 // Importing Google Charts, then run API calls
     google.charts.load('current', {
@@ -12,7 +14,7 @@
 
 
 $(document).ready(function(){
-  //  getCovidNews();
+    getCovidNews();
 });
 
 function getCovidLatestData(){
@@ -31,6 +33,8 @@ function getCovidLatestData(){
                 // Parse Statistics
                     latestbyCountry.push([(result[i]['location']),(result[i]['new_cases']),(result[i]['new_deaths'])]);
                     totalbyCountry.push([(result[i]['location']),(result[i]['total_cases']),(result[i]['total_deaths'])]);
+                    totalCases =+ result[i]['total_cases'];
+                    totalDeaths =+ result[i]['total_deaths'];
             })
 
             // Debug Only
@@ -41,6 +45,9 @@ function getCovidLatestData(){
                 drawRegionsMap(latestbyCountry, 'covid_latest_map', '#FF7F00');
                 drawRegionsMap(totalbyCountry, 'covid_total_map', '#FF0000');
 
+            // Display Totals
+                $('#total_cases').text(totalCases);
+                $('#total_deaths').text(totalDeaths);
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) { 
             alert("Status: " + textStatus); alert("Error: " + errorThrown); 
@@ -60,7 +67,7 @@ function drawRegionsMap(dataForDrawing, htmlElement, color) {
     chart.draw(data, options);
 }
 
-/*
+
 function getCovidNews(){
     var url = `http://api.mediastack.com/v1/news?access_key=6999d5eee97103a6a145cc12f2af7615&keywords=covid&languages=en&limit=50`;
     var req = new Request(url);
@@ -85,8 +92,8 @@ function getCovidNews(){
 
         for (i=0; i<6; i++){
             $('#carousel_' + i).find("img").attr('src', newsAPI[i]['image']);
-            $('#carousel_' + i).find("h5").text(newsAPI[i]['title']);
-            $('#carousel_' + i).find("p").text(newsAPI[i]['description']);
+            $('#carousel_' + i).find("#news_title").text(newsAPI[i]['title']);
+            $('#carousel_' + i).find("#news_description").text(newsAPI[i]['description']);
             $('#carousel_' + i).find("a").attr('href', newsAPI[i]['url']);
             console.log(newsAPI[i]['image']);
         }
@@ -105,7 +112,7 @@ function getCovidNews(){
 
 
 }
-*/
+
 
 
 

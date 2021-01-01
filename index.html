@@ -40,56 +40,85 @@
         <div class="container" id="main1">
             <div class="row" id="first_row">
 
-                <div class="col-md-8">
-                    <div class="card">
+                <div class="col-md-8 d-flex">
+                    <div class="card flex-fill">
                         <div class="row">
-                            <div class="col-md-3">
-                                Latest News <i class="fas fa-caret-right"></i>
+                            <div class="col-md-4">
+                                <h1><span class="badge badge_news">Latest News <i class="fas fa-caret-right"></i></span></h1>
                             </div>
-                            <div class="col-md-9">
+                            <div class="col-md-8">
                                 <div id="covidNews" class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner">
             
-                                        <div class="carousel-item active">
-                                            <div class="d-none d-md-block">
-                                                <h5>First slide label</h5>
-                                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                            </div>
+                                        <div class="carousel-item active" id="carousel_0">
+                                            <a href="" target="_blank">
+                                                <div class="d-none d-md-block">
+                                                    <img src="https://dummyimage.com/100x100/000/fff&text=Loading" /><span id="news_title">Loading</span>
+                                                    <br><br><p id="news_description">Loading News...</p>
+                                                </div>
+                                            </a>
                                         </div>
             
-                                        <div class="carousel-item">
-                                            <div class="d-none d-md-block">
-                                                <h5>Second slide label</h5>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                            </div>
+                                        <div class="carousel-item" id="carousel_1">
+                                            <a href="" target="_blank">
+                                                <div class="d-none d-md-block">
+                                                    <img src="https://dummyimage.com/100x100/000/fff&text=Loading" /><span id="news_title">Loading</span>
+                                                    <br><br><p id="news_description">Loading News...</p>
+                                                </div>
+                                            </a>
                                         </div>
                                         
-                                        <div class="carousel-item">
-                                            <div class="d-none d-md-block">
-                                                <h5>Third slide label</h5>
-                                                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                                            </div>
+                                        <div class="carousel-item" id="carousel_2">
+                                            <a href="" target="_blank">
+                                                <div class="d-none d-md-block">
+                                                    <img src="https://dummyimage.com/100x100/000/fff&text=Loading" /><span id="news_title">Loading</span>
+                                                    <br><br><p id="news_description">Loading News...</p>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div class="carousel-item" id="carousel_3">
+                                            <a href="" target="_blank">
+                                                <div class="d-none d-md-block">
+                                                    <img src="https://dummyimage.com/100x100/000/fff&text=Loading" /><span id="news_title">Loading</span>
+                                                    <br><br><p id="news_description">Loading News...</p>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div class="carousel-item" id="carousel_4">
+                                            <a href="" target="_blank">
+                                                <div class="d-none d-md-block">
+                                                    <img src="https://dummyimage.com/100x100/000/fff&text=Loading" /><span id="news_title">Loading</span>
+                                                    <br><br><p id="news_description">Loading News...</p>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div class="carousel-item" id="carousel_5">
+                                            <a href="" target="_blank">
+                                                <div class="d-none d-md-block">
+                                                    <img src="https://dummyimage.com/100x100/000/fff&text=Loading" /><span id="news_title">Loading</span>
+                                                    <br><br><p id="news_description">Loading News...</p>
+                                                </div>
+                                            </a>
                                         </div>
 
                                     </div>
-                                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true" style="color:black;"></span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div><!-- col-md-8 -->
 
-                <div class="col-md-4" id="first_div_row">
-                    <div class="card">
+                <div class="col-md-4 d-flex" id="first_div_row">
+                    <div class="card flex-fill">
                         <div class="card-body">
-                            <p class="card-text">1596161565 Total Cases</p>
+                            <p class="card-text display-1 text-center text-warning" id="total_cases">Loading</p>
+                            <p class="card-text h2 text-center"> Total Cases</p>
+                            <br>
+                            <p class="card-text display-1 text-center text-danger" id="total_deaths">Loading</p>
+                            <p class="card-text h2 text-center">Total Deaths</p>
                         </div>
                     </div>
                 </div>

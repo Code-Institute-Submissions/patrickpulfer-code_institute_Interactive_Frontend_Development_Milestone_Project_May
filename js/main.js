@@ -20,9 +20,6 @@ $(document).ready(function(){
    // getCovidNews();
    getCovidDataTimestamp();
 
-    $("#toggle_daily_stats").click(function(){
-        $("#covid_latest_map").parent().slideToggle("slow");
-    });
     $("#toggle_total_stats").click(function(){
         $("#covid_total_map").parent().slideToggle("slow");
     });
@@ -40,7 +37,6 @@ function getCovidLatestData(){
 
         success: function(result){
 
-            
             //covidLatestData = result.map((x) => x);
             latestbyCountry.push(['Country', 'New Cases', 'New Deaths']);
             totalbyCountry.push(['Country', 'Total Cases', 'Total Deaths']);
@@ -63,17 +59,6 @@ function getCovidLatestData(){
                         (result[i]['new_deaths_smoothed']),
                         (result[i]['positive_rate'])
                     ]);
-
-                    /*table_daily.push(
-                        [
-                            (result[i]['location']),
-                            (result[i]['new_tests']),
-                            (result[i]['new_cases']),
-                            (result[i]['new_deaths']),
-                            (result[i]['hosp_patients']),
-                            (result[i]['icu_patients'])
-                        ]
-                    );*/
             })
 
             // Debug Only
@@ -83,6 +68,7 @@ function getCovidLatestData(){
             // Draw Google GeoChart
                 drawRegionsMap(latestbyCountry, 'covid_latest_map', '#FF7F00');
                 drawRegionsMap(totalbyCountry, 'covid_total_map', '#FF0000');
+                $("#covid_total_map").parent().toggle();
                 drawDailybyCountryTable(covidLatestTableData);
 
             // Display Totals
@@ -161,36 +147,5 @@ function drawDailybyCountryTable(covidLatestTableData){
     $('#fist_table').DataTable( {
         data: covidLatestTableData,
         "order": [[ 1, "desc" ]]
-   /*     columns: [
-            { data: 'Location'},
-            { data: 'New Cases'},
-            { data: 'New Deaths'},
-            { data: 'New Tests'},
-            { data: 'Hospitalized'},
-            { data: 'ICU'},
-            { data: 'Weekly Deaths'},
-            { data: 'Weekly Positive'},
-            { data: 'Tests Rate'}
-        ]*/
     });
-
-
-
-    /*
-    let tempTable = "";
-
-    $('#dailyTable').append('<tr><th>Location</th><th>New Cases</th><th>New Deaths</th><th>New Tests</th><th>Hospitalized</th><th style="border-right-width: medium;">ICU</th><th>Weekly Cases</th><th>Weekly Deaths</th><th>Weekly Positive<br>Tests Rate</th></tr>');
-
-    $.each(covidLatestData, function(i, val){
-        if (covidLatestData[i]['new_tests'] == null || covidLatestData[i]['new_tests'] == ""){covidLatestData[i]['new_tests'] = '0*';}
-        if (covidLatestData[i]['hosp_patients'] == null || covidLatestData[i]['hosp_patients'] == ""){covidLatestData[i]['hosp_patients'] = '0*';}
-        if (covidLatestData[i]['icu_patients'] == null || covidLatestData[i]['icu_patients'] == ""){covidLatestData[i]['icu_patients'] = '0*';}
-        if (covidLatestData[i]['positive_rate'] == null || covidLatestData[i]['positive_rate'] == ""){covidLatestData[i]['positive_rate'] = '0*';}
-        tempTable = tempTable.concat('<tr><td>' + covidLatestData[i]['location'] + '</td><td>' + covidLatestData[i]['new_cases'] + '</td><td>' + covidLatestData[i]['new_deaths'] + '</td><td>' + covidLatestData[i]['new_tests'] + '</td><td>' + covidLatestData[i]['hosp_patients'] + '</td><td style="border-right-width: medium;">' + covidLatestData[i]['icu_patients'] + '</td><td>' + covidLatestData[i]['new_cases_smoothed'] + '</td><td>' + covidLatestData[i]['new_deaths_smoothed'] + '</td><td>' + covidLatestData[i]['positive_rate'] + '</td></tr>');
-        
-    })
-    $('#dailyTable').append(tempTable);
-    $('<p>*0 or not reported</p>').insertAfter('#dailyTable');
-*/
-
 };

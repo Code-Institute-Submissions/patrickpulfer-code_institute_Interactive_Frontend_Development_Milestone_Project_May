@@ -17,7 +17,7 @@
 
 
 $(document).ready(function(){
-   // getCovidNews();
+   getCovidNews();
    getCovidDataTimestamp();
 
     $("#toggle_total_stats").click(function(){
@@ -110,7 +110,7 @@ function drawRegionsMap(dataForDrawing, htmlElement, color) {
 
 
 function getCovidNews(){
-    var url = `https://api.mediastack.com/v1/news?access_key=6999d5eee97103a6a145cc12f2af7615&keywords=covid&languages=en&limit=50`;
+    var url = `http://api.mediastack.com/v1/news?access_key=6999d5eee97103a6a145cc12f2af7615&keywords=covid&languages=en&limit=50`;
     var req = new Request(url);
     
     fetch(req)
@@ -122,7 +122,7 @@ function getCovidNews(){
         $.each(newsAPI2, function(i, val){
 
             if (newsAPI2[i]['image'] != null && newsAPI2[i]['image'].substr(newsAPI2[i]['image'].length, -3) != ".mp3" && newsAPI2[i]['image'].substr(newsAPI2[i]['image'].length, -3) != ".mp4") {
-                console.log(newsAPI2[i]);
+            //    console.log(newsAPI2[i]);
                 newsAPI.push(newsAPI2[i]);
             }
         })

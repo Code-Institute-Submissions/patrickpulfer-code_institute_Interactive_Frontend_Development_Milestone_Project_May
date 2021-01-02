@@ -121,11 +121,11 @@
                 <div class="col-md-4 d-flex" id="first_div_row">
                     <div class="card flex-fill">
                         <div class="card-body">
-                            <p class="card-text display-1 text-center text-warning" id="total_cases">Loading</p>
-                            <p class="card-text h2 text-center"> Total Cases</p>
+                            <p class="card-text display-3 text-center text-warning" id="total_cases">Loading</p>
+                            <p class="card-text h3 text-center"> New Cases Today</p>
                             <br>
-                            <p class="card-text display-1 text-center text-danger" id="total_deaths">Loading</p>
-                            <p class="card-text h2 text-center">Total Deaths</p>
+                            <p class="card-text display-3 text-center text-danger" id="total_deaths">Loading</p>
+                            <p class="card-text h3 text-center"> New Deaths Today</p>
                         </div>
                     </div>
                 </div>
@@ -136,28 +136,29 @@
         <div class="row">
             <h1 class="text-center">Daily Update</h1>
             <br>
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                <i class="fas fa-info-circle"></i> Hover your mouse to see more details!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
             <div style="width: 100%;" id="covid_latest_map"></div>
-            <br>
-            Data
-            <div class="container-fluid">
-            
+            <p>&nbsp;<span class="badge badge-primary"><i class="far fa-clock"></i> Last Update: <span id="last_update_badge"></span></span>&nbsp;<a href="https://systems.jhu.edu/about/" target="_blank"><span class="badge badge-primary"><i class="fas fa-link"> Source: Center for Systems Science and Engineering (CSSE) at Johns Hopkins University</i></span></a></p>
             <table id="fist_table" class="display compact cell-border">
                 <thead>
                     <tr><th>Location</th><th>New Cases</th><th>New Deaths</th><th>New Tests</th><th>Hospitalized</th><th style="border-right-width: medium;">ICU</th><th>Weekly Cases</th><th>Weekly Deaths</th><th>Weekly Positive<br>Tests Rate</th></tr>
                 </thead>
             </table>
-            </div>
         </div>
-
+    </div>
+    <br>
+    <div class="container" id="page_second_half">
         <div class="row">
-            <h1 class="text-center">Total Cases</h1>
+            <h1 class="text-center">Total Numbers</h1>
             <div style="width: 100%;" id="covid_total_map"></div>
         </div>
 
         <div class="row">
             <button type="button" class="btn btn-danger" id="toggle_total_stats">Show Total Stats</button>
         </div>
-
     </div>
         
 

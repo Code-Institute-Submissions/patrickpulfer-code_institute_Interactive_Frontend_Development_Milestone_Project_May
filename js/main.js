@@ -43,11 +43,9 @@ function getCovidLatestData(){
 
             $.each(result, function(i, val){
                 // Parse Statistics
+                    if(result[i]['location'] === 'World'){return;}
                     latestbyCountry.push([(result[i]['location']),(result[i]['new_cases']),(result[i]['new_deaths'])]);
                     totalbyCountry.push([(result[i]['location']),(result[i]['total_cases']),(result[i]['total_deaths'])]);
-                    totalCases =+ result[i]['total_cases'];
-                    totalDeaths =+ result[i]['total_deaths'];
-
                     covidLatestTableData.push([
                         (result[i]['location']),
                         (result[i]['new_cases']),
@@ -62,8 +60,8 @@ function getCovidLatestData(){
             })
 
             // Debug Only
-           //     console.log('API:');
-              //     console.log(result);
+             //  console.log('API:');
+               // console.log(result);
 
             // Draw Google GeoChart
                 drawRegionsMap(latestbyCountry, 'covid_latest_map', '#FF7F00');
@@ -72,8 +70,11 @@ function getCovidLatestData(){
                 drawDailybyCountryTable(covidLatestTableData);
 
             // Display Totals
-                $('#total_cases').text(totalCases);
-                $('#total_deaths').text(totalDeaths);
+                totalCases = result['OWID_WRL']['new_cases'];
+                totalDeaths = result['OWID_WRL']['new_deaths'];
+                $('#total_cases').text(new Intl.NumberFormat().format(totalCases));
+                $('#total_deaths').text(new Intl.NumberFormat().format(totalDeaths));
+
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) { 
             alert("Status: " + textStatus); alert("Error: " + errorThrown); 
@@ -87,13 +88,12 @@ function getCovidDataTimestamp(){
     .then(data => {
         covidDataTimestamp.push(data.substr(0,10));
         covidDataTimestamp.push(data.substr(11,8));
+        $('#last_update_badge').text(covidDataTimestamp[0]);
     })
 
     .catch((error) => {
         console.error('Error:', error);
     });
-
-
 }
 
 function drawRegionsMap(dataForDrawing, htmlElement, color) {
@@ -133,9 +133,7 @@ function getCovidNews(){
             $('#carousel_' + i).find("#news_description").text(newsAPI[i]['description'].substring(0,500));
             $('#carousel_' + i).find("a").attr('href', newsAPI[i]['url']);
             $('#carousel_' + i).find("#news_details").append('<i class="fas fa-link"></i>&nbsp;' + newsAPI[i]['source'] + '&nbsp;&nbsp;<i class="far fa-clock"></i>&nbsp;' + newsAPI[i]['published_at'].substr(11,8) + '&nbsp;&nbsp;<i class="far fa-calendar-alt"></i>&nbsp;' + newsAPI[i]['published_at'].substr(0,10));
-        }
-        
-
+        } 
     })
 
     .catch((error) => {
@@ -146,6 +144,6 @@ function getCovidNews(){
 function drawDailybyCountryTable(covidLatestTableData){
     $('#fist_table').DataTable( {
         data: covidLatestTableData,
-        "order": [[ 1, "desc" ]]
+        "order": [[ 1, "desc" ]],
     });
 };

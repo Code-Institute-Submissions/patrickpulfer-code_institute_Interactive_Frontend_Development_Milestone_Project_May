@@ -20,6 +20,7 @@ a:active {
 
 body {
   background-color: #1a2238;
+  color:#1a2238;
 }
 
 #page_first_half {
@@ -36,7 +37,7 @@ body {
 }
 
 #main1 {
-  padding-bottom: 100px;
+  margin-bottom: 20px;
 }
 
 .badge_news {
@@ -49,9 +50,15 @@ body {
 //  margin: 5px 0px 5px 5px;
 }
 
+h1 {
+  padding: 5px 0px;
+  width: 100%;
+  text-align:center;
+}
 
 
 .carousel-item > a > div > img {
+  margin-top: 5px;
   width: 100px;
   height: 100px;
  
@@ -59,9 +66,21 @@ body {
 
 #news_title {
   font-size: x-large;
-  margin-left: 5px;
-  margin-bottom: 5px;
+  margin: 5px;
   vertical-align:bottom;
+}
+
+#news_description {
+  margin: 5px;
+  font-size: medium;
+}
+
+#news_details {
+  font-size: small;
+}
+
+th, td {
+  margin-right: 2px;
 }
 
 

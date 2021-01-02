@@ -55,6 +55,7 @@
                                                 <div class="d-none d-md-block">
                                                     <img src="https://dummyimage.com/100x100/000/fff&text=Loading" /><span id="news_title">Loading</span>
                                                     <br><br><p id="news_description">Loading News...</p>
+                                                    <p id="news_details"></p>
                                                 </div>
                                             </a>
                                         </div>
@@ -64,6 +65,7 @@
                                                 <div class="d-none d-md-block">
                                                     <img src="https://dummyimage.com/100x100/000/fff&text=Loading" /><span id="news_title">Loading</span>
                                                     <br><br><p id="news_description">Loading News...</p>
+                                                    <p id="news_details"></p>
                                                 </div>
                                             </a>
                                         </div>
@@ -73,6 +75,7 @@
                                                 <div class="d-none d-md-block">
                                                     <img src="https://dummyimage.com/100x100/000/fff&text=Loading" /><span id="news_title">Loading</span>
                                                     <br><br><p id="news_description">Loading News...</p>
+                                                    <p id="news_details"></p>
                                                 </div>
                                             </a>
                                         </div>
@@ -82,6 +85,7 @@
                                                 <div class="d-none d-md-block">
                                                     <img src="https://dummyimage.com/100x100/000/fff&text=Loading" /><span id="news_title">Loading</span>
                                                     <br><br><p id="news_description">Loading News...</p>
+                                                    <p id="news_details"></p>
                                                 </div>
                                             </a>
                                         </div>
@@ -91,6 +95,7 @@
                                                 <div class="d-none d-md-block">
                                                     <img src="https://dummyimage.com/100x100/000/fff&text=Loading" /><span id="news_title">Loading</span>
                                                     <br><br><p id="news_description">Loading News...</p>
+                                                    <p id="news_details"></p>
                                                 </div>
                                             </a>
                                         </div>
@@ -100,6 +105,7 @@
                                                 <div class="d-none d-md-block">
                                                     <img src="https://dummyimage.com/100x100/000/fff&text=Loading" /><span id="news_title">Loading</span>
                                                     <br><br><p id="news_description">Loading News...</p>
+                                                    <p id="news_details"></p>
                                                 </div>
                                             </a>
                                         </div>
@@ -127,12 +133,24 @@
     </div> <!-- First Half -->
     <div class="container" id="page_second_half">
         <div class="row">
-            <div id="covid_latest_map" style="width: 100%; height: 500px;"></div>
+            <h1 class="text-center">Daily Update</h1>
+            <br>
+            <div style="width: 100%; height: 500px;" id="covid_latest_map"></div>
+            <br>
+            Data
+            <table id="dailyTable" style="text-align: right" border="1"></table>
         </div>
 
         <div class="row">
-            <div id="covid_total_map" style="width: 100%; height: 500px;"></div>
+            <h1 class="text-center">Total Cases</h1>
+            <div style="width: 100%; height: 500px;" id="covid_total_map"></div>
         </div>
+
+        <div class="row">
+            <button type="button" class="btn btn-warning" id="toggle_daily_stats">Show Daily Stats</button>
+            <button type="button" class="btn btn-danger" id="toggle_total_stats">Show Total Stats</button>
+        </div>
+
     </div>
         
 

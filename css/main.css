@@ -1,26 +1,21 @@
+/* Links */
 a:link {
   color: #1a2238;
   text-decoration: none;
 }
-
-/* visited link */
 a:visited {
   color: #1a2238;
 }
-
-/* mouse over link */
 a:hover {
   color: #1a2238;
 }
-
-/* selected link */
 a:active {
   color: #1a2238;
 }
 
 body {
   background-color: #1a2238;
-  color:#1a2238;
+  color: #1a2238;
 }
 
 .card {
@@ -38,29 +33,28 @@ body {
   margin: 5px 5px 0px 5px;
 }
 
-// .carousel {
-//  margin: 5px 0px 5px 5px;
+.carousel {
+  margin: 5px 0px 5px 5px;
 }
 
-h1, h1 > p {
+h1,
+h1 > p {
   padding: 5px 0px;
   width: 100%;
-  text-align:center;
-  color:#1a2238;
+  text-align: center;
+  color: #1a2238;
 }
-
 
 .carousel-item > a > div > img {
   margin-top: 5px;
   width: 100px;
   height: 100px;
- 
 }
 
 #news_title {
   font-size: x-large;
   margin: 5px;
-  vertical-align:bottom;
+  vertical-align: bottom;
 }
 
 #news_description {
@@ -72,11 +66,7 @@ h1, h1 > p {
   font-size: small;
 }
 
-th, td {
+th,
+td {
   margin-right: 2px;
 }
-
-
-
-
-// #1A2238#9DAAF2#FF6A3D#F4DB7D

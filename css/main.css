@@ -51,22 +51,26 @@ h1 > p {
   height: 100px;
 }
 
-#news_title {
+.news_title {
   font-size: x-large;
   margin: 5px;
   vertical-align: bottom;
 }
 
-#news_description {
+.news_description {
   margin: 5px;
   font-size: medium;
 }
 
-#news_details {
+.news_details {
   font-size: small;
 }
 
 th,
 td {
   margin-right: 2px;
+}
+
+table {
+  width: 100%;
 }

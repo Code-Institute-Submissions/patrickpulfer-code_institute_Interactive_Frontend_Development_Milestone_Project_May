@@ -8,6 +8,8 @@
     var covidDataTimestamp = Array();
 
     var covidLatestTableData = Array();
+    var covidTotalTableData = Array();
+    
 
 // Importing Google Charts, then run API calls
     google.charts.load('current', {
@@ -17,11 +19,12 @@
 
 
 $(document).ready(function(){
-   getCovidNews();
+    //getCovidNews();
    getCovidDataTimestamp();
 
-    $("#toggle_total_stats").click(function(){
-        $("#covid_total_map").parent().slideToggle("slow");
+    $(".toggle_stats_button").click(function(){
+        $("#covid_total_map").parent().parent().slideToggle("slow");
+        $("#covid_latest_map").parent().parent().slideToggle("slow");
     });
 
 
@@ -36,8 +39,6 @@ function getCovidLatestData(){
         dataType: 'json',
 
         success: function(result){
-
-            //covidLatestData = result.map((x) => x);
             latestbyCountry.push(['Country', 'New Cases', 'New Deaths']);
             totalbyCountry.push(['Country', 'Total Cases', 'Total Deaths']);
 
@@ -53,21 +54,29 @@ function getCovidLatestData(){
                         (result[i]['new_tests']),
                         (result[i]['hosp_patients']),
                         (result[i]['icu_patients']),
-                        (result[i]['new_cases_smoothed']),
-                        (result[i]['new_deaths_smoothed']),
                         (result[i]['positive_rate'])
+                    ]);
+                    covidTotalTableData.push([
+                        (result[i]['location']),
+                        (result[i]['total_cases']),
+                        (result[i]['total_deaths']),
+                        (result[i]['total_tests']),
+                        (result[i]['total_vaccinations']),
+                        (result[i]['life_expectancy']),
+                        (result[i]['population'])
                     ]);
             })
 
             // Debug Only
-             //  console.log('API:');
-               // console.log(result);
+           //    console.log('API:');
+             // console.log(result);
 
             // Draw Google GeoChart
                 drawRegionsMap(latestbyCountry, 'covid_latest_map', '#FF7F00');
                 drawRegionsMap(totalbyCountry, 'covid_total_map', '#FF0000');
-                $("#covid_total_map").parent().toggle();
+                $("#covid_total_map").parent().parent().toggle();
                 drawDailybyCountryTable(covidLatestTableData);
+                drawTotalbyCountryTable(covidTotalTableData);
 
             // Display Totals
                 totalCases = result['OWID_WRL']['new_cases'];
@@ -88,7 +97,7 @@ function getCovidDataTimestamp(){
     .then(data => {
         covidDataTimestamp.push(data.substr(0,10));
         covidDataTimestamp.push(data.substr(11,8));
-        $('#last_update_badge').text(covidDataTimestamp[0]);
+        $('.last_update_badge').text(covidDataTimestamp[0] + ' ' + covidDataTimestamp[1]);
     })
 
     .catch((error) => {
@@ -97,8 +106,6 @@ function getCovidDataTimestamp(){
 }
 
 function drawRegionsMap(dataForDrawing, htmlElement, color) {
-  //  console.log('Data for Drawing?');
-  //  console.log(dataForDrawing);
     var data = google.visualization.arrayToDataTable(dataForDrawing);
     var options = {
         colors: [(color)],
@@ -143,6 +150,13 @@ function getCovidNews(){
 
 function drawDailybyCountryTable(covidLatestTableData){
     $('#fist_table').DataTable( {
+        data: covidLatestTableData,
+        "order": [[ 1, "desc" ]],
+    });
+};
+
+function drawTotalbyCountryTable(covidLatestTableData){
+    $('#total_table').DataTable( {
         data: covidLatestTableData,
         "order": [[ 1, "desc" ]],
     });

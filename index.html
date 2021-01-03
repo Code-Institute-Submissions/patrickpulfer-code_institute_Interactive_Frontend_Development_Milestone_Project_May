@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>COVID-19 CORONAVIRUS PANDEMIC DAILY TRACKER</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/126469e40c.js" crossorigin="anonymous"></script>
@@ -12,10 +12,10 @@
 </head>
 
 <body>
-    <div class="container-fluid" id="page_first_half" >
+    <div class="container-fluid">
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#">COVID-19 Coronavirus Pandemic Daily Tracker</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -24,14 +24,6 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active"><a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </li>
                     </ul>
                 </div>
             </nav>
@@ -39,7 +31,7 @@
 
         <br>
         <div class="container" id="main1">
-            <div class="row" id="first_row">
+            <div class="row">
 
                 <div class="col-md-8 d-flex">
                     <div class="card flex-fill">
@@ -132,38 +124,52 @@
             </div>
         </div>
     </div> <!-- First Half -->
-    <div class="container" id="page_second_half">
-        <div class="row">
+
+    <div class="container">
+        <div class="card flex-fill">
             <h1 class="text-center">Daily Update</h1>
+            <p class="text-center">Reported Cases and Deaths by Country, Territory, or Conveyance
+                <br><i class="fas fa-info-circle"></i> Hover your mouse on map to see more details!
+            </p>
             <br>
-            <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                <i class="fas fa-info-circle"></i> Hover your mouse to see more details!
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
             <div style="width: 100%;" id="covid_latest_map"></div>
-            <p>&nbsp;<span class="badge badge-primary"><i class="far fa-clock"></i> Last Update: <span id="last_update_badge"></span></span>&nbsp;<a href="https://systems.jhu.edu/about/" target="_blank"><span class="badge badge-primary"><i class="fas fa-link"> Source: Center for Systems Science and Engineering (CSSE) at Johns Hopkins University</i></span></a></p>
-            <table id="fist_table" class="display compact cell-border">
+            <p>&nbsp;<span class="badge badge-primary"><i class="far fa-clock"></i> Last Update: <span class="last_update_badge"></span></span>&nbsp;</p>
+            <table id="fist_table" class="display cell-border" width="100%">
                 <thead>
-                    <tr><th>Location</th><th>New Cases</th><th>New Deaths</th><th>New Tests</th><th>Hospitalized</th><th style="border-right-width: medium;">ICU</th><th>Weekly Cases</th><th>Weekly Deaths</th><th>Weekly Positive<br>Tests Rate</th></tr>
+                    <tr><th>Location</th><th>New Cases</th><th>New Deaths</th><th>New Tests</th><th>Hospitalized</th><th style="border-right-width: medium;">In ICU</th><th>Weekly Positive Tests Rate**</th></tr>
                 </thead>
             </table>
+            **The share of COVID-19 tests that are positive, given as a rolling 7-day average
+            <br><button type="button" class="btn btn-danger toggle_stats_button" id="toggle_stats_button">Switch to Total Stats</button>
         </div>
     </div>
-    <br>
-    <div class="container" id="page_second_half">
-        <div class="row">
+    <div class="container">
+        <div class="card flex-fill">
             <h1 class="text-center">Total Numbers</h1>
+            <p class="text-center">Reported Cases and Deaths by Country, Territory, or Conveyance
+                <br><i class="fas fa-info-circle"></i> Hover your mouse on map to see more details!
+            </p>
             <div style="width: 100%;" id="covid_total_map"></div>
-        </div>
-
-        <div class="row">
-            <button type="button" class="btn btn-danger" id="toggle_total_stats">Show Total Stats</button>
+            <p>&nbsp;<span class="badge badge-primary"><i class="far fa-clock"></i> Last Update: <span class="last_update_badge"></span></span>&nbsp;</p>
+            <table id="total_table" class="display cell-border" width="100%">
+                <thead>
+                    <tr><th>Location</th><th>Total Cases</th><th>Total Deaths</th><th>Total Tests</th><th>Vaccinations</th><th>Life Expectancy</th><th>Population</th></tr>
+                </thead>
+            </table>
+            **The share of COVID-19 tests that are positive, given as a rolling 7-day average
+            <br><button type="button" class="btn btn-danger toggle_stats_button" id="toggle_stats">Switch to Today's Stats</button>
         </div>
     </div>
-        
 
+    <br>
+    <div class="container">
+        <div class="card">
+            <p>Data displayed in this service has been made publicly available by <a href="https://ourworldindata.org/coronavirus" target="_blank">ourworldindata.org</a>. I declare no competing interest and I beleive that we can make a better world if people are well informed.
+            </p>
+            <a href="https://systems.jhu.edu/about/" target="_blank"><span class="badge badge-primary"><i class="fas fa-link"> Source: Center for Systems Science and Engineering (CSSE) at Johns Hopkins University</i></span></a>
+        </div>
+    </div>
 
-    
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>

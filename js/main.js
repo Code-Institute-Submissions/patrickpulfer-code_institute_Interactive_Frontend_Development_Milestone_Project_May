@@ -22,7 +22,7 @@
 $(document).ready(function(){
     var width = $(window).width(); 
     if(width >= 576){
-        //getCovidNews();
+        getCovidNews();
         
         //Error handling when API returns empty data
             if(newsAPI === '' || newsAPI === undefined || newsAPI === null || newsAPI.length === 0){

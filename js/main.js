@@ -131,7 +131,7 @@ function getCovidNews(){
             for (i=0; i<6; i++){
                 $('#carousel_' + i).find("img").attr('src', newsAPI[i].image);
                 $('#carousel_' + i).find(".news_title").text(newsAPI[i].title);
-                $('#carousel_' + i).find(".news_description").text(newsAPI[i].description.substring(0,450));
+                $('#carousel_' + i).find(".news_description").text(newsAPI[i].description.substring(0,400));
                 $('#carousel_' + i).find("a").attr('href', newsAPI[i].url);
                 $('#carousel_' + i).find(".news_details").append('<i class="fas fa-link"></i>&nbsp;' + newsAPI[i].source + '&nbsp;&nbsp;<i class="far fa-clock"></i>&nbsp;' + newsAPI[i].published_at.substr(11,8) + '&nbsp;&nbsp;<i class="far fa-calendar-alt"></i>&nbsp;' + newsAPI[i].published_at.substr(0,10));
             } 

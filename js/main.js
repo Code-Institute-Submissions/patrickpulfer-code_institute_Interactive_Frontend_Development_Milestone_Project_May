@@ -23,12 +23,6 @@ $(document).ready(function(){
     var width = $(window).width(); 
     if(width >= 576){
         getCovidNews();
-        
-        //Error handling when API returns empty data
-            if(newsAPI === '' || newsAPI === undefined || newsAPI === null || newsAPI.length === 0){
-                $('#covidNews').hide();
-                $('#covidNews').parent().append('Loading News from MediaStack.com failed. Reload Page to try again.');
-            }
     } 
     getCovidDataTimestamp();
 
@@ -141,6 +135,12 @@ function getCovidNews(){
                 $('#carousel_' + i).find("a").attr('href', newsAPI[i].url);
                 $('#carousel_' + i).find(".news_details").append('<i class="fas fa-link"></i>&nbsp;' + newsAPI[i].source + '&nbsp;&nbsp;<i class="far fa-clock"></i>&nbsp;' + newsAPI[i].published_at.substr(11,8) + '&nbsp;&nbsp;<i class="far fa-calendar-alt"></i>&nbsp;' + newsAPI[i].published_at.substr(0,10));
             } 
+
+        //Error handling when API returns empty data
+            if(newsAPI === '' || newsAPI === undefined || newsAPI === null || newsAPI.length === 0){
+                $('#covidNews').hide();
+                $('#covidNews').parent().append('Loading News from MediaStack.com failed. Reload Page to try again.');
+            }
     })
 
     .catch((error) => {

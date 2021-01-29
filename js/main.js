@@ -22,7 +22,7 @@
 $(document).ready(function(){
     var width = $(window).width(); 
     if(width >= 576){
-        getCovidNews();
+    //    getCovidNews();
     } 
     getCovidDataTimestamp();
 

@@ -20,12 +20,36 @@ For this project, I've adopted the methodology of the five planes of UX, which c
 
 As the pandemic of Covid19 has changed the way we live, work and interact socially, I wanted to contribute to the world by providing a medium to inform and update people on the seriousness of this virus, while ensuring the that the data is presented in an easy to understand way without any additional clutter or information overload.
 
+#### User Stories
+
+I have consulted with several potential end users on what would be the most important requirements/wishes for details available in this project. As there are several applications providing similar statistics for Covid19, I've quickly understood that a key differentiator for my project would be necessary for adoption.
+
+Multiple users within my line of work:
+
+- _"We want an one-stop page with all information"_
+- _"We want to be able to compare countries"_
+- _"We ware waiting for vaccination. Any data available?"_
+
+Aggie, Business Owner:
+
+- _"Data must come from a source I can trust"_
+- _"I don't like to click trough several pages"_
+- _"Cluttered sites are undersireable for me"_
+
+Fernando, Advisor in IT industry:
+
+- _"I want no clutter"_
+- _"Daily stats must be in forefront"_
+- _"I want to know my home country's data without having to click trough menus"_
+  <br/><br/>
+
 ### Scope of this Project
 
 - Consume Covid19 related data from a reputable source
 - Display this data in an easy to understand and intuitive manner
 - Present latest news related to Covid19 pandemic to the user
 - User should be able to select display of data between Latest vs Total
+  <br/><br/>
 
 ### Structure
 
@@ -35,10 +59,15 @@ As the pandemic of Covid19 has changed the way we live, work and interact social
   - Aditional/in-depth representation of data
 - A Main navigation bar will be displayed on the top to allow user to navigate to sections and/or select datasets
 - A Footer will be displayed in the bottom for aditional information on the project
+  <br/><br/>
 
 ### Skeleton
 
-wireframes
+To be adhere to the structure/phylosophy outlined above, the overall website should be divided into three sections as shown below:
+
+<img src="./wireframes/wireframe1.png">
+
+Further development into wireframing and shaping the project can be found in [Wireframing the Project](./wireframes.md).
 
 ### Design
 

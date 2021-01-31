@@ -11,7 +11,7 @@ In this section, you should go over the different parts of your project, and des
 ### Features
 
 - World Map - Visual Representation of Latest or Total stats
-- ...
+- ....
 
 For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
 

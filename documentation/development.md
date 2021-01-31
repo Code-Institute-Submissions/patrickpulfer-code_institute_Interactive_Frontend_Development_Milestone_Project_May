@@ -68,6 +68,7 @@ To be adhere to the structure/phylosophy outlined above, the overall website sho
 <img src="./wireframes/wireframe1.png">
 
 Further development into wireframing and shaping the project can be found in [Wireframing the Project](./wireframes.md).
+<br/><br/>
 
 ### Design
 

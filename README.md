@@ -8,7 +8,7 @@ Essentially, this part is your sales pitch.
 
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
 
-### Existing Features
+### Features
 
 - Feature 1 - allows users X to achieve Y, by having them fill out Z
 - ...

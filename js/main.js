@@ -120,20 +120,14 @@ function getCovidNews(){
         newsAPI2 = data.data;
         var i=0;
 
+        // Attempting to filter out duplicating news
             $.each(newsAPI2, function(i, val){
                 if (i == 49){return false;}
-                // Debug Only 
-                    /*console.log('Current:');
-                    console.log(newsAPI2[i].title);
-                    console.log('Next:');
-                    console.log(newsAPI2[(i+1)].title); */
-
                 if (newsAPI2[i].title != newsAPI2[(i+1)].title){
                     if (newsAPI2[i].image == null){newsAPI2[i].image = './images/news.jpg'; }
                     console.log(newsAPI2[i].image);
                     newsAPI.push(newsAPI2[i]);
                 }
-
             });
 
         // Display 6 news items from source

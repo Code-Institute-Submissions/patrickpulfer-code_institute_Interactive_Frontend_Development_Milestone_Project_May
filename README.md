@@ -1,6 +1,7 @@
 # Patrick's Covid19 Tracker
 
 A simplified tracker for Covid-19 related news from reputable sources, aimed to provide non-convulated and up-to-date data for the masses
+<br><br>
 
 ## Features
 
@@ -10,6 +11,7 @@ A simplified tracker for Covid-19 related news from reputable sources, aimed to 
 ### Features Left to Implement
 
 - Visual graphs displaying trendings and historical data on Covid-19 infections
+  <br><br>
 
 ## Technologies Used
 
@@ -26,6 +28,7 @@ This application has been built by using the following technologies:
   - Google API to draw charts via JavaScript
 - [jQuery DataTables](https://datatables.net/)
   - Plug-in for the jQuery Javascript library for interactive tables
+    <br><br>
 
 ## API's consumed
 
@@ -33,10 +36,12 @@ This application has been built by using the following technologies:
   - Free API for Live News & Blog Articles
 - [Our World in Data API](https://github.com/owid/covid-19-data)
   - COVID-19 dataset collection from various reputable sources, including WHO Vaccine Tracker & Johns Hopkins University
+    <br><br>
 
 ## Development
 
 If you are curious on the process of the development of this project, please [click here](./documentation/development.md).
+<br><br>
 
 ## Deployment
 
@@ -81,17 +86,20 @@ Downloading the source code as Zip file from GitHub is also a valid method for *
 Note: You will have the extract the contents of your .zip file with your OS's decompression tool. [7zip](https://www.7-zip.org/download.html) is a good alternative.
 
 Once unzipped, look for the index.html file and double click it.
+<br><br>
 
 ## Credits
 
 ### Content
 
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+- Covid-19 data has been sourced from [Our World in Data](https://github.com/owid/covid-19-data/tree/master/public/data).
+- Covid-19 related news has been sourced from [Mediastack](https://mediastack.com/).
 
 ### Media
 
-- The photos used in this site were obtained from ...
+- The Logo has been created in [Placeit](https://placeit.net/), a branding service I've used in the past
+- The picture replacing empty news items has been taken from [Pixbay](https://pixabay.com/illustrations/stop-corona-virus-coronavirus-mask-5032778/), a free images & royalty free stock pictures website
 
 ### Acknowledgements
 
-- I received inspiration for this project from X
+- I received inspiration for this project from [Worldmeter](https://www.worldometers.info/coronavirus/), a website I personally visit almost daily. I hope to contribute to the world by spreading the news and current status of the current pandemic

@@ -22,7 +22,7 @@
 $(document).ready(function(){
     var width = $(window).width(); 
     if(width >= 576){
-    //    getCovidNews();
+    getCovidNews();
     } 
     getCovidDataTimestamp();
 
@@ -112,7 +112,7 @@ function drawRegionsMap(dataForDrawing, htmlElement, color) {
 
 
 function getCovidNews(){
-    var url = 'http://api.mediastack.com/v1/news?access_key=6999d5eee97103a6a145cc12f2af7615&keywords=covid&languages=en&limit=50';
+    var url = 'http://api.mediastack.com/v1/news?access_key=6999d5eee97103a6a145cc12f2af7615&keywords=covid&languages=en&limit=100';
     var req = new Request(url); 
     fetch(req)
     .then(response => response.json())
@@ -120,11 +120,20 @@ function getCovidNews(){
         newsAPI2 = data.data;
         var i=0;
 
-        // API source is showing .mp3 & .mp4 as image, let's filter this out
             $.each(newsAPI2, function(i, val){
-                if (newsAPI2[i].image != null && newsAPI2[i].image.substr(newsAPI2[i].image.length, -3) != ".mp3" && newsAPI2[i].image.substr(newsAPI2[i].image.length, -3) != ".mp4") {
+                if (i == 49){return false;}
+                // Debug Only 
+                    /*console.log('Current:');
+                    console.log(newsAPI2[i].title);
+                    console.log('Next:');
+                    console.log(newsAPI2[(i+1)].title); */
+
+                if (newsAPI2[i].title != newsAPI2[(i+1)].title){
+                    if (newsAPI2[i].image == null){newsAPI2[i].image = './images/news.jpg'; }
+                    console.log(newsAPI2[i].image);
                     newsAPI.push(newsAPI2[i]);
                 }
+
             });
 
         // Display 6 news items from source

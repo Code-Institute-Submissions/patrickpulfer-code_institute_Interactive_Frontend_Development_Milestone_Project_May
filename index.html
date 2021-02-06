@@ -18,7 +18,7 @@
 
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="#">COVID-19 Pandemic Daily Tracker</a>
+            <a class="navbar-brand" href="#">COVID-19 Daily Tracker</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -32,11 +32,11 @@
     </header>
 
     <br>
-    <div class="container d-none d-sm-block" id="main1">
+    <div class="container d-sm-block" id="main1">
         <div class="row">
 
             <div class="col-md-8">
-                <img src="./images/logo.png" class="img-fluid" alt="Logo" id="logo">
+                <img src="./images/logo.png" class="img-fluid order-sm-0" alt="Logo" id="logo">
                 <div class="card flex-fill">
 
                             <div id="covidNews" class="carousel slide" data-ride="carousel">
@@ -144,6 +144,8 @@
                 </div>
             </div>
 
+            <div class="d-block d-sm-none"><br><br></div>
+
             <div class="col-md-4 d-flex" id="first_div_row">
                 <div class="card flex-fill">
                     <div class="card-body">
@@ -190,7 +192,7 @@
                     <tr><th>Location</th><th>Total Cases</th><th>Total Deaths</th><th>Total Tests</th><th>Vaccinations</th><th>Life Expectancy</th><th>Population</th></tr>
                 </thead>
             </table>
-            <br><button type="button" class="btn btn-danger toggle_stats_button" id="toggle_stats">Switch to Today's Stats</button>
+            <br><br><button type="button" class="btn btn-danger toggle_stats_button" id="toggle_stats">Switch to Today's Stats</button>
         </div>
     </div>
 

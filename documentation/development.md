@@ -70,34 +70,108 @@ To be adhere to the structure/phylosophy outlined above, the overall website sho
 Further development into wireframing and shaping the project can be found in [Wireframing the Project](./wireframes.md).
 <br/><br/>
 
-### Design
-
----
-
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
-
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-
-- As a user type, I want to perform an action, so that I can achieve a goal.
-
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
-
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+- During the lifecycle of development, I've had several testing period of one week, which has been performed by the end users mentioned above in my User Stories section.
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+### Challenges during development and testing
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+- I have observed that documentation for Google GeoChart is not always up-to-date, specifically around the google.visualization function. This presented difficulties on how to feed the data from a live API source, which I've been able to overcome by feeding the live data to a seperate array with the format intended for method .arrayToDataTable
 
-1. Contact form:
-   1. Go to the "Contact Us" page
-   2. Try to submit the empty form and verify that an error message about the required fields appears
-   3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-   4. Try to submit the form with all inputs valid and verify that a success message appears.
+- Documentation for Google GeoChart recommends a callback function to be called on documentation load which never worked for me, as I've observed the world map being drwawn with empty data. I've been able to overcome this challenge with calling the draw GeoChart function within the function that processes the data API (crude approach but works!)
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+- MediaStack API returns a lot of duplicated news (sometimes 10+ in a row!), so I've had to attempt to filter duplicates out by comparing previous news to current news.
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+- MediaStack API returns null, .mp4, .mp3 and other files as "image" so feeding these in the <img> tag would present empty/broken images. I've been able to overcome this challenge by filtering and replacing the "image" string with a default/placeholder
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+- Data Tables are very diffult to deal with on mobile phones. I've yet to find a solution apart from hiding in mobile view (I prefer to keep the table as it is than hiding it). As I want to continue develop this project further, I will find a solution for this.
+
+### Testing Variables
+
+As my project consumes external APIs and processes the data into a format that would fit for purpose, I've centered the temporary storage of this data into global variables. If anything does not load or displays empty data, the end user can easilly pinpoint which global variable is missing data and provide feedback by running the following script in the browser's developer tools:
+
+```
+// Copy & Paste into Chrome/Firefox Console to check variables:
+
+var errors = 0;
+if(latestbyCountry.length === 0){
+console.log('Error: latestbyCountry array is empty'); errors++;
+}
+else {console.log('OK: latestbyCountry')}
+if(totalbyCountry.length === 0){
+    console.log('Error: totalbyCountry array is empty'); errors++;
+}
+else {console.log('OK: totalbyCountry')}
+if(newsAPI.length === 0){
+    console.log('Error: newsAPI array is empty'); errors++;
+}
+else {console.log('OK: newsAPI')}
+if(latestbyCountry.length === 0){
+    console.log('Error: covidDataTimestamp array is empty'); errors++;
+}
+else {console.log('OK: covidDataTimestamp')}
+if(covidLatestTableData.length === 0){
+    console.log('Error: covidLatestTableData array is empty'); errors++;
+}
+else {console.log('OK: covidLatestTableData')}
+if(covidTotalTableData.length === 0){
+    console.log('Error: covidTotalTableData array is empty'); errors++;
+}
+else {console.log('OK: covidTotalTableData')}
+if(jQuery.type(totalDeaths) === 'number' && totalDeaths > 0){
+    console.log('OK: totalDeaths')
+}
+else {console.log('Error: totalDeaths is not a number or is empty'); errors++;}
+if(jQuery.type(totalCases) === 'number' && totalCases > 0){
+    console.log('OK: totalCases')
+}
+else {console.log('Error: totalCases is not a number or is empty'); errors++;}
+console.log('Errors Found: ' + errors);
+```
+
+Steps to execute are:
+
+1. In Google Chrome, Chromium or Firefox, press F12
+2. Search for the option "Console" and open it
+3. Copy and Paste the above script into the Console and press "Enter"
+4. Observe the feedback in Console and check if "Errors found" shows 1 or 0
+5. If errors are found, note the variable name mentioned above displaying any error
+
+### Manual Testing
+
+Users were asked to perform tests with the following setup:
+
+- Mobile Phone (Preferentially Android or iPhone)
+- Native Browsers (Chrome on Android and Safari on iPhone)
+- Desktop (Firefox, Chromium based browser like Google Chrome or Microsoft Edge)
+
+Steps:
+
+1. Navigation Bar
+
+   1. Click on "Total Numbers" and observe if World Map changes to the red map with total numbers displayed
+   2. Click on "Daily Update" and observe if World Map changes back to orange map with daily numbers
+
+2. News Section
+
+   1. Observe if news are changing every few seconds
+   2. Click on a news item (image or text) and observe if a new browser tab opens and navigates to the source of the link
+
+3. Total Numbers
+
+   1. Visual observation if Todays and Totals numbers are showing instead of "Loading"
+
+4. World Map with Data
+
+   1. Visual observation if map is showing some countries with color of orange or similar
+   2. Hover over any country that has color of orange or similar and observe if country name and related stats are showing
+   3. You may skip this step if not easilly identifyable: Hover over the country with the most case and observe if the numbers match with the legend that is displayed below the world map
+
+5. Data Table
+
+   1. Select a different value in "Show 10 entries" and observe if entries match on the table
+   2. In the Search Box, enter your country name and observe if it gets filtered in the table
+   3. Observe if the table pagination system works by clicking on the pagination of the bottom right side of the table
+
+6. "Switch to" button
+   1. When clicking the red "Switch To" button, observe if the world map changes to the promised data "Total Stats" or "Today's Stats" with a slide animation

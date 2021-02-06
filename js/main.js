@@ -21,9 +21,9 @@
 
 $(document).ready(function(){
     var width = $(window).width(); 
-    if(width >= 576){
-    getCovidNews();
-    } 
+  //  if(width >= 576){
+        getCovidNews();
+    //}
     getCovidDataTimestamp();
 
     $(".toggle_stats_button").click(function(){
@@ -125,7 +125,6 @@ function getCovidNews(){
                 if (i == 49){return false;}
                 if (newsAPI2[i].title != newsAPI2[(i+1)].title){
                     if (newsAPI2[i].image == null){newsAPI2[i].image = './images/news.jpg'; }
-                    console.log(newsAPI2[i].image);
                     newsAPI.push(newsAPI2[i]);
                 }
             });

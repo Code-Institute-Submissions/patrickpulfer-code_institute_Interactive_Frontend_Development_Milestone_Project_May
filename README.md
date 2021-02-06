@@ -103,3 +103,5 @@ Once unzipped, look for the index.html file and double click it.
 ### Acknowledgements
 
 - I received inspiration for this project from [Worldmeter](https://www.worldometers.info/coronavirus/), a website I personally visit almost daily. I hope to contribute to the world by spreading the news and current status of the current pandemic
+
+- My experience in web development has been backend so far (PHP), so this is my first project with data being processed in frontend JavaScript. I reckon my code may not be the most efficient but I'm learning thanks to Code Institute <3

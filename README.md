@@ -71,8 +71,13 @@ If you are curious about the process of the development of this project, please 
 The website is currently available at:
 
 - [PWeb Solutions (my own hosting)](http://www.pweb.solutions/covidtracker/)
-- [GitPages](https://patrickpulfer.github.io/code_institute_Interactive_Frontend_Development_Milestone_Project/index.html)
-- [GitHack](https://raw.githack.com/patrickpulfer/code_institute_Interactive_Frontend_Development_Milestone_Project/master/index.html)
+- [GitPages](http://patrickpulfer.github.io/code_institute_Interactive_Frontend_Development_Milestone_Project/index.html)
+- [GitHack](http://raw.githack.com/patrickpulfer/code_institute_Interactive_Frontend_Development_Milestone_Project/master/index.html)
+
+**Important** You will have to create your own MediaStack & Google API Keys and add those to the main.js file if you wish to deploy this project on your own. Please see the following documentation on how to create one:
+
+- https://developers.google.com/maps/documentation/geocoding/get-api-key
+- https://mediastack.com/documentation
 
 I have used the following method to deploy this website at GitPages but may also use this workflow to deploy any websites at GitPages:
 

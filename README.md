@@ -1,3 +1,10 @@
+<img src="./documentation/logo2.png">
+<br><br>
+<img src="https://img.shields.io/github/last-commit/patrickpulfer/code_institute_Interactive_Frontend_Development_Milestone_Project?style=for-the-badge">
+<img src="https://img.shields.io/github/repo-size/patrickpulfer/code_institute_Interactive_Frontend_Development_Milestone_Project?style=for-the-badge">
+<img src="https://img.shields.io/github/languages/count/patrickpulfer/code_institute_Interactive_Frontend_Development_Milestone_Project?style=for-the-badge">
+<br><br>
+
 # Patrick's Covid19 Tracker
 
 A simplified tracker for Covid-19 related news from reputable sources, aimed to provide non-convoluted and up-to-date data for the masses
@@ -11,11 +18,11 @@ A simplified tracker for Covid-19 related news from reputable sources, aimed to 
   - Interactive data table with in-depth representation of Covid-19 data
 - Confirmed cases and deaths numbers
   - Provided by _Our World in Data_ and sourced from Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University (JHU).
-- Hospitalizations and intensive care unit (ICU) admissions
+- Hospitalizations and intensive care unit (ICU) admissions (Switch table to Totals)
   - Provided by _Our World in Data_ and sourced from reputable sources like European Centre for Disease Prevention and Control (ECDC), government of the United Kingdom;
-- Testing for COVID-19
+- Testing for COVID-19 (Switch table to Totals)
   - This data is collected by the _Our World in Data_ team from official reports
-- Vaccinations against COVID-19
+- Vaccinations against COVID-19 (Switch table to Totals)
   - This data is collected by the _Our World in Data_ team from official reports
 
 ### Features Left to Implement
@@ -82,7 +89,7 @@ You may deploy this website on your local machine for testing purposes.
 On **_Linux_**, you can easily do this on your terminal if you have git installed:
 
 ```
-cd <to your prefered folder>
+cd <to your preferred folder>
 git clone https://github.com/patrickpulfer/code_institute_Interactive_Frontend_Development_Milestone_Project.git
 
 ```

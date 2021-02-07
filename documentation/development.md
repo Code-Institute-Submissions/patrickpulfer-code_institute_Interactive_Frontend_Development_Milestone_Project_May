@@ -84,7 +84,7 @@ Further development into wireframing and shaping the project can be found in [Wi
 
 - Data Tables are very difficult to deal with on mobile phones. I've yet to find a solution apart from hiding in mobile view (I prefer to keep the table as it is than hiding it). As I want to continue develop this project further, I will find a solution for this.
 
-### Testing Variables
+### Bug Testing (Variables)
 
 As my project consumes external APIs and processes the data into a format that would fit for purpose, I've centered the temporary storage of this data into global variables. If anything does not load or displays empty data, the end user can easily pinpoint which global variable is missing data and provide feedback by running the following script in the browser's developer tools:
 
@@ -137,7 +137,7 @@ Steps to execute are:
 
 ### Manual Testing
 
-Users were asked to perform tests with the following setup:
+Users mentioned in User Stories section were asked to perform tests with the following setup:
 
 - Mobile Phone (Preferentially Android or iPhone)
 - Native Browsers (Chrome on Android and Safari on iPhone)
@@ -145,31 +145,33 @@ Users were asked to perform tests with the following setup:
 
 Steps:
 
-1. Navigation Bar
+1. Navigation Bar (Feature & Bug)
 
    1. Click on "Total Numbers" and observe if World Map changes to the red map with total numbers displayed
    2. Click on "Daily Update" and observe if World Map changes back to orange map with daily numbers
 
-2. News Section
+2. News Section (Feature & Bug)
 
    1. Observe if news are changing every few seconds
    2. Click on a news item (image or text) and observe if a new browser tab opens and navigates to the source of the link
 
-3. Total Numbers
+3. Total Numbers (Feature)
 
    1. Visual observation if Todays and Totals numbers are showing instead of "Loading"
 
-4. World Map with Data
+4. World Map with Data (Feature)
 
    1. Visual observation if map is showing some countries with color of orange or similar
    2. Hover over any country that has color of orange or similar and observe if country name and related stats are showing
    3. You may skip this step if not easily identifiable: Hover over the country with the most case and observe if the numbers match with the legend that is displayed below the world map
 
-5. Data Table
+5. Data Table (Feature & Bug)
 
    1. Select a different value in "Show 10 entries" and observe if entries match on the table
    2. In the Search Box, enter your country name and observe if it gets filtered in the table
    3. Observe if the table pagination system works by clicking on the pagination of the bottom right side of the table
 
-6. "Switch to" button
+6. "Switch to" button (Feature & Bug)
    1. When clicking the red "Switch To" button, observe if the world map changes to the promised data "Total Stats" or "Today's Stats" with a slide animation
+
+### Testing

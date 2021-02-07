@@ -5,6 +5,7 @@
     var latestbyCountry = Array();
     var totalbyCountry = Array();
     var newsAPI = Array();
+    var newsAPI2 = Array();
     var totalDeaths;
     var totalCases;
     var covidDataTimestamp = Array();
@@ -20,10 +21,7 @@
 
 
 $(document).ready(function(){
-    var width = $(window).width(); 
-  //  if(width >= 576){
-        getCovidNews();
-    //}
+    getCovidNews();
     getCovidDataTimestamp();
 
     $(".toggle_stats_button").click(function(){

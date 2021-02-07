@@ -3,7 +3,7 @@
 <img src="https://img.shields.io/github/last-commit/patrickpulfer/code_institute_Interactive_Frontend_Development_Milestone_Project?style=for-the-badge">
 <img src="https://img.shields.io/github/repo-size/patrickpulfer/code_institute_Interactive_Frontend_Development_Milestone_Project?style=for-the-badge">
 <img src="https://img.shields.io/github/languages/count/patrickpulfer/code_institute_Interactive_Frontend_Development_Milestone_Project?style=for-the-badge">
-<br><br>
+<br>
 
 # Patrick's Covid19 Tracker
 

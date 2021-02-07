@@ -174,4 +174,25 @@ Steps:
 6. "Switch to" button (Feature & Bug)
    1. When clicking the red "Switch To" button, observe if the world map changes to the promised data "Total Stats" or "Today's Stats" with a slide animation
 
-### Testing
+### User Story Testing
+
+- When development cycle reached feature readiness, I've asked the previously mentioned users to get hands on the project and provide feedback if wishes/criteria has been met:
+
+- _"We want an one-stop page with all information"_
+  - Positive feedback received on this request, as project consist of a single page application
+- _"We want to be able to compare countries"_
+  - Mixed feedback received as you can compare countries but there are no ranking list (who performs best & worse); I will make this as a goal for my next version
+- _"We are waiting for vaccination. Any data available?"_
+  - Positive feedback received, as vaccination data is present and comparable with what they can research via google
+- _"Data must come from a source I can trust"_
+  - Positive feedback, as the user has compared data from a local news site to what the website reported
+- _"I don't like to click trough several pages"_
+  - Similar to the first criteria, positive feedback as project consist of a single plage application
+- _"Cluttered sites are undesirable for me"_
+  - Positive feedback received, as page feels minimal and still contains the necessary data
+- _"I want no clutter"_
+  - Same as above
+- _"Daily stats must be in forefront"_
+  - Positive feedback, especially around the right top box indicating numbers in very big font
+- _"I want to know my home country's data without having to click trough menus"_
+  - Mostly positive feedback but user expressed that it would be even more beneficial if the project would be able to locate where the end user is accessing from and display this counties data first; next version may include location tracking and and displaying the countries data first in data table

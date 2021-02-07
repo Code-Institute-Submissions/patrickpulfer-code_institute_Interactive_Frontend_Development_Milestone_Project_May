@@ -122,7 +122,7 @@ function getCovidNews(){
             $.each(newsAPI2, function(i, val){
                 if (i == 49){return false;}
                 if (newsAPI2[i].title != newsAPI2[(i+1)].title){
-                    if (newsAPI2[i].image == null){newsAPI2[i].image = './images/news.jpg'; }
+                    if (newsAPI2[i].image == null){newsAPI2[i].image = './assets/images/news.jpg'; }
                     newsAPI.push(newsAPI2[i]);
                 }
             });

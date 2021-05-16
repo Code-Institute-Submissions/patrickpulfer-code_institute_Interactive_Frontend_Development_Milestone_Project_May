@@ -1,101 +1,101 @@
 /* Links */
 
 @font-face {
-  font-family: comfortaa;
-  src: url(./comfortaa-VariableFont_wght.ttf);
+	font-family: comfortaa;
+	src: url(./comfortaa-VariableFont_wght.ttf);
 }
 
 a:link {
-  color: #1a2238;
-  text-decoration: none;
+	color: #1a2238;
+	text-decoration: none;
 }
 a:visited {
-  color: #1a2238;
+	color: #1a2238;
 }
 a:hover {
-  color: #1a2238;
+	color: #1a2238;
 }
 a:active {
-  color: #1a2238;
+	color: #1a2238;
 }
 
 /* Navbar */
 
 .navbar,
 header {
-  background-color: #4360b9;
-  color: #f4fffd;
+	background-color: #4360b9;
+	color: #f4fffd;
 }
 
 #logo {
-  padding-bottom: 15px;
+	padding-bottom: 15px;
 }
 
 body {
-  background-color: #f4fffd;
-  color: #4360b9;
-  font-family: comfortaa;
+	background-color: #f4fffd;
+	color: #4360b9;
+	font-family: comfortaa;
 }
 
 .card {
-  background-color: white;
-  color: #4360b9;
+	background-color: white;
+	color: #4360b9;
 }
 
 #main1 {
-  margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 .badge_news {
-  background-color: #1a2238;
-  color: white;
-  margin: 5px 5px 0px 5px;
+	background-color: #1a2238;
+	color: white;
+	margin: 5px 5px 0px 5px;
 }
 
 .carousel {
-  margin: 5px 0px 5px 5px;
+	margin: 5px 0px 5px 5px;
 }
 
 h1,
 h1 > p {
-  padding: 5px 0px;
-  width: 100%;
-  text-align: center;
-  color: #4360b9;
+	padding: 5px 0px;
+	width: 100%;
+	text-align: center;
+	color: #4360b9;
 }
 
 .carousel-item > a > div > div > img {
-  margin-top: 5px;
-  width: 100px;
-  height: 100px;
+	margin-top: 5px;
+	width: 100px;
+	height: 100px;
 }
 
 .news_title {
-  font-size: x-large;
-  margin: 5px;
-  vertical-align: bottom;
+	font-size: large;
+	margin: 5px;
+	vertical-align: bottom;
 }
 
 .news_description {
-  margin: 5px;
-  font-size: medium;
+	margin: 5px;
+	font-size: 12px;
 }
 
 .news_details {
-  font-size: small;
+	font-size: small;
 }
 
 th,
 td {
-  margin-right: 2px;
+	margin-right: 2px;
 }
 
 table {
-  width: 100%;
+	width: 100%;
 }
 
 .footer {
-  color: #f4fffd;
-  width: 100%;
-  background-color: #4360b9;
+	color: #f4fffd;
+	width: 100%;
+	background-color: #4360b9;
 }

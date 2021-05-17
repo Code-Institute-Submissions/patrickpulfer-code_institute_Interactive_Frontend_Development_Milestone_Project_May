@@ -3,12 +3,22 @@
 <img src="https://img.shields.io/github/last-commit/patrickpulfer/code_institute_Interactive_Frontend_Development_Milestone_Project?style=for-the-badge">
 <img src="https://img.shields.io/github/repo-size/patrickpulfer/code_institute_Interactive_Frontend_Development_Milestone_Project?style=for-the-badge">
 <img src="https://img.shields.io/github/languages/count/patrickpulfer/code_institute_Interactive_Frontend_Development_Milestone_Project?style=for-the-badge">
-<br>
+<br><br>
 
 # Patrick's Covid19 Tracker
 
 A simplified tracker for Covid-19 related news from reputable sources, aimed to provide non-convoluted and up-to-date data for the masses
 <br><br>
+
+## Screenshots
+
+- Website  
+  <img src="./documentation/feature_1.png" width="60%">
+- Interactive Data  
+  <img src="./documentation/feature_2.png" width="80%">
+- Mobile Friendly  
+   <img src="./documentation/feature_3.png" width="30%">
+  <br><br>
 
 ## Features
 

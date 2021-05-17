@@ -11,6 +11,7 @@ var totalCases;
 var covidDataTimestamp = Array();
 var covidLatestTableData = Array();
 var covidTotalTableData = Array();
+var windowSize = $(window).width();
 
 
 // Importing Google Charts, then run API calls
@@ -157,15 +158,25 @@ function getCovidNews() {
 }
 
 function drawDailybyCountryTable(covidLatestTableData) {
-    $('#fist_table').DataTable({
+    hidden_table = $('#fist_table').DataTable({
         data: covidLatestTableData,
+        responsive: true,
         "order": [[1, "desc"]],
     });
+    if (windowSize <= 576) {
+        hidden_table.columns([3, 4, 5, 6]).visible(false);
+        hidden_table.columns.adjust().draw(false);
+    }
 }
 
 function drawTotalbyCountryTable(covidLatestTableData) {
-    $('#total_table').DataTable({
+    hidden_table2 = $('#total_table').DataTable({
         data: covidLatestTableData,
+        responsive: true,
         "order": [[1, "desc"]],
     });
+    if (windowSize <= 576) {
+        hidden_table2.columns([3, 4, 5, 6]).visible(false);
+        hidden_table2.columns.adjust().draw(false);
+    }
 }

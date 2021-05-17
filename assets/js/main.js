@@ -58,7 +58,8 @@ function getCovidLatestData() {
 
             // Parse Statistics
             $.each(result, function (i, val) {
-                if (result[i].location === 'World' ||
+                if (
+                    result[i].location === 'World' ||
                     result[i].location === 'Asia' ||
                     result[i].location === 'South America' ||
                     result[i].location === 'Europe' ||

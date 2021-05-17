@@ -64,7 +64,8 @@ function getCovidLatestData() {
                     result[i].location === 'South America' ||
                     result[i].location === 'Europe' ||
                     result[i].location === 'European Union' ||
-                    result[i].location === 'North America'
+                    result[i].location === 'North America' ||
+                    result[i].location === 'Greenland'
                 ) { return; }
                 latestbyCountry.push([(result[i].location), (result[i].new_cases), (result[i].new_deaths)]);
                 totalbyCountry.push([(result[i].location), (result[i].total_cases), (result[i].total_deaths)]);

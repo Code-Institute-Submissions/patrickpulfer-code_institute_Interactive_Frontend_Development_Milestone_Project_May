@@ -13,9 +13,9 @@ A simplified tracker for Covid-19 related news from reputable sources, aimed to 
 ## Screenshots
 
 - Website  
-  <img src="./documentation/feature_1.png" width="60%">
+  <img src="./documentation/feature_1.png" width="80%">
 - Interactive Data  
-  <img src="./documentation/feature_2.png" width="80%">
+  <img src="./documentation/feature_2.png" width="90%">
 - Mobile Friendly  
    <img src="./documentation/feature_3.png" width="30%">
   <br><br>
